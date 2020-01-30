@@ -1,64 +1,40 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-
-
-// Write password to the #password input
 function writePassword() {
- var password = generatePassword();
- var passwordText = document.querySelector("#password");  //length 8-128
-
- passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-var pwLength = parseInt(prompt('What length of password do you want to select?','llength from 8 to 128'))
- var upperCase = confirm('Do you want uppercase?: ')
- var lowerCase = confirm('Do you want lowercase?: ')
- var number = confirm('Do you want number?: ')
- var specialChar = confirm('Do you want specialChar?: ')
-
-pwdChars = ['specialChar','upperCase','lowerCase','number']
- specialChar = ['!','@','#','$','%','&','*','-','_']
- upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','R','S','T','U','V','W','X','Y','Z']
- lowerCase = ['a','b','c','d','e','f','g','h','i','j','l','m','n','o','p','r','s','t','u','v','w','x','y','z']
- number = [0,1,2,3,4,5,6,7,8,9]
- let pwC
- //let pW
- 
- function genratePassword(){
-
-  if(upperCase != null)
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  console.log(password)
- // pwC = pwC.concat(upperCase)
-
-if(lowerCase != null)
-pwC = pwC.concat(lowerCase)
-
-if(number != null)
-pwC = pwC.concat(number)
-
-if(specialChar != null)
-pwC = pwC.concat(specialChar)
-
-
-
-
-for(var i=0;i<=pwdChars.length;i++){
-  let pW = pwdChar.Math.floor(Math.random(pwdChars.length))
-    
-  // pW.join(randomPass)
-
 }
-//return(pW)
- }
- alert(pW)
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+function generatePassword() {
+  // Password values
+  var person = parseInt(prompt("How long would you like the password?"))
+  var person2 = confirm("Would you like a uppercase?:")
+  var person3 = confirm("Would you like a lowercase?:")
+  var person4 = confirm("Would you like a number?:")
+  var person5 = confirm("Would you like a special char?:")
+  var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+  var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var num = '0123456789';
+  var sym = '!#$%^&*=-_';
+  var password = ''
+  if (person2)
+    password += upperCase
+  if (person3)
+    password += lowerCase
+  if (person4)
+    password += num
+  if (person5)
+    password += sym
+  var pwd = ''
+  for (var i = 0; i < person; i++) {
+    var char = password.charAt(Math.floor(Math.random() * password.length));
+    pwd += char
+  }
+  return pwd;
+}
 
 
 
-   
+
+
