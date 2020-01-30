@@ -8,26 +8,26 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   // Password values
-  var person = parseInt(prompt("How long would you like the password?"))
-  var person2 = confirm("Would you like a uppercase?:")
-  var person3 = confirm("Would you like a lowercase?:")
-  var person4 = confirm("Would you like a number?:")
-  var person5 = confirm("Would you like a special char?:")
-  var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
-  var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var passwordLength = parseInt(prompt("How long would you like the password?"))
+  var upperCase = confirm("Would you like a uppercase?:")
+  var lowerCase = confirm("Would you like a lowercase?:")
+  var number = confirm("Would you like a number?:")
+  var splChar = confirm("Would you like a special char?:")
+  var lowerCasearr = 'abcdefghijklmnopqrstuvwxyz';
+  var upperCasearr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var num = '0123456789';
   var sym = '!#$%^&*=-_';
   var password = ''
-  if (person2)
-    password += upperCase
-  if (person3)
-    password += lowerCase
-  if (person4)
+  if (upperCase)
+    password += upperCasearr
+  if (lowerCase)
+    password += lowerCasearr
+  if (number)
     password += num
-  if (person5)
+  if (splChar)
     password += sym
   var pwd = ''
-  for (var i = 0; i < person; i++) {
+  for (var i = 0; i < passwordLength; i++) {
     var char = password.charAt(Math.floor(Math.random() * password.length));
     pwd += char
   }
